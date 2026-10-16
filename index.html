@@ -122,6 +122,8 @@ section{display:flex;flex-direction:column;gap:22px;scroll-margin-top:80px}
 .proj .body{padding:0 20px 18px}
 .proj ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
 .proj li::marker{color:var(--accent)}
+.proj .tags{display:flex;flex-wrap:wrap;gap:6px}
+.proj .tag{font:400 12px/1 var(--mono);padding:5px 8px;border-radius:6px;border:1px dashed var(--line);color:var(--muted);background:var(--bg)}
 @media (max-width:640px){.projects{grid-template-columns:1fr}}
 
 /* Skills */
@@ -175,12 +177,20 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
   </header>
 
   <nav class="nav" aria-label="Sections">
+    <a href="#education" data-sec="education">Education</a>
     <a href="#experience" data-sec="experience">Experience</a>
     <a href="#projects" data-sec="projects">Projects</a>
     <a href="#skills" data-sec="skills">Skills</a>
-    <a href="#education" data-sec="education">Education</a>
     <span class="progress" id="progress"></span>
   </nav>
+
+  <section id="education">
+    <div class="sec-head"><h2>Education</h2></div>
+    <div class="edu">
+      <div class="school"><span class="yrs">2023 – 2025</span><h3>University at Buffalo, SUNY</h3><p>MS, Computer Science and Engineering</p></div>
+      <div class="school"><span class="yrs">2018 – 2022</span><h3>IIT Kharagpur</h3><p>B.Tech, Computer Science and Engineering</p></div>
+    </div>
+  </section>
 
   <section id="experience">
     <div class="sec-head">
@@ -253,6 +263,7 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
           <div class="top"><span class="kind">Deep learning</span><span class="chev" aria-hidden="true">▾</span></div>
           <h3>Object detection &amp; retrieval pipeline</h3>
           <div class="headline">Better small-object detection with fewer false positives, served in real time.</div>
+          <div class="tags"><span class="tag">Faster R-CNN</span><span class="tag">ResNet-50</span><span class="tag">FPN</span><span class="tag">SSD</span><span class="tag">VGG-16</span><span class="tag">Flask</span></div>
           <span class="when">May – Jul 2024</span>
         </summary>
         <div class="body"><ul>
@@ -266,6 +277,7 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
           <div class="top"><span class="kind">Computer vision</span><span class="chev" aria-hidden="true">▾</span></div>
           <h3>Facial recognition &amp; emotion classification</h3>
           <div class="headline">Reached <span class="num">68%+ accuracy</span>, beating the reference model's 62%.</div>
+          <div class="tags"><span class="tag">VGG16 (custom)</span><span class="tag">Keras</span><span class="tag">Landmark labeling</span></div>
           <span class="when">Aug – Dec 2023</span>
         </summary>
         <div class="body"><ul>
@@ -279,6 +291,7 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
           <div class="top"><span class="kind">NLP research</span><span class="chev" aria-hidden="true">▾</span></div>
           <h3>Query understanding &amp; content indexing</h3>
           <div class="headline">Improved macro-F1 by <span class="num">5.1%</span> over the baseline with less labeled data.</div>
+          <div class="tags"><span class="tag">GAN-BERT</span><span class="tag">BERT</span><span class="tag">Semi-supervised learning</span></div>
           <span class="when">Aug – Dec 2021</span>
         </summary>
         <div class="body"><ul>
@@ -305,13 +318,6 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
     <div class="status" id="skill-status" aria-live="polite"></div>
   </section>
 
-  <section id="education">
-    <div class="sec-head"><h2>Education</h2></div>
-    <div class="edu">
-      <div class="school"><span class="yrs">2023 – 2025</span><h3>University at Buffalo, SUNY</h3><p>MS, Computer Science and Engineering</p></div>
-      <div class="school"><span class="yrs">2018 – 2022</span><h3>IIT Kharagpur</h3><p>B.Tech, Computer Science and Engineering</p></div>
-    </div>
-  </section>
 </div>
 <div class="toast" id="toast" role="status"></div>
 
