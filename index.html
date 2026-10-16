@@ -104,6 +104,26 @@ section{display:flex;flex-direction:column;gap:22px;scroll-margin-top:80px}
 .num{font-weight:600;color:var(--ink);background:linear-gradient(transparent 58%, var(--pop-soft) 58%);padding:0 2px;border-radius:2px}
 @media (max-width:560px){.role summary{grid-template-columns:minmax(0,1fr) auto}.when{grid-column:1;text-align:left}}
 
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:14px;transition:border-color .2s, transform .2s, box-shadow .2s, opacity .25s}
+.proj:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 30px -22px var(--accent)}
+.proj.dim{opacity:.35}
+.proj.lit{border-color:var(--pop);box-shadow:0 0 0 3px var(--pop-soft)}
+.proj summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.proj summary::-webkit-details-marker{display:none}
+.proj .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.proj .kind{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:5px 8px;border-radius:999px}
+.proj h3{font-size:18px;font-weight:700}
+.proj .headline{color:var(--muted);font-size:15px}
+.proj .when{text-align:left}
+.proj[open] .chev{transform:rotate(180deg)}
+.proj .body{padding:0 20px 18px}
+.proj ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.proj li::marker{color:var(--accent)}
+@media (max-width:640px){.projects{grid-template-columns:1fr}}
+
 /* Skills */
 .skills{display:flex;flex-direction:column;gap:16px}
 .group{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px 18px;align-items:start}
@@ -156,6 +176,7 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
 
   <nav class="nav" aria-label="Sections">
     <a href="#experience" data-sec="experience">Experience</a>
+    <a href="#projects" data-sec="projects">Projects</a>
     <a href="#skills" data-sec="skills">Skills</a>
     <a href="#education" data-sec="education">Education</a>
     <span class="progress" id="progress"></span>
@@ -203,6 +224,66 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
         <div class="body"><ul>
           <li>Sped up downstream legal workflows by <span class="num">40%</span> with a document extraction service handling 500K+ documents a month at sub-300ms P95.</li>
           <li>Made contract data extraction <span class="num">60% more efficient</span>, and shipped an internal tool used by 500+ people at <span class="num">99.9% uptime</span>.</li>
+        </ul></div>
+      </details>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head">
+      <h2>Projects</h2>
+      <span class="hint">Tap a card for details</span>
+    </div>
+    <div class="projects">
+      <details class="proj" data-skills="Go concurrency,Raft">
+        <summary>
+          <div class="top"><span class="kind">Distributed systems</span><span class="chev" aria-hidden="true">▾</span></div>
+          <h3>Fault-tolerant storage &amp; evaluation framework</h3>
+          <div class="headline">Halved P99 commit latency, <span class="num">45ms → 22ms</span>, under 10K+ writes/sec.</div>
+          <span class="when">UB CPI-NS lab · Aug 2024 – May 2025</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Built a key-value store that stayed <span class="num">99.99%</span> linearizable through leader failures and network splits.</li>
+          <li>Found and fixed split-brain bugs by simulating <span class="num">500+ node failures</span>.</li>
+          <li>Wrote a workload generator sustaining <span class="num">10K+ concurrent writes/sec</span> to stress the system.</li>
+        </ul></div>
+      </details>
+      <details class="proj" data-skills="Python">
+        <summary>
+          <div class="top"><span class="kind">Deep learning</span><span class="chev" aria-hidden="true">▾</span></div>
+          <h3>Object detection &amp; retrieval pipeline</h3>
+          <div class="headline">Better small-object detection with fewer false positives, served in real time.</div>
+          <span class="when">May – Jul 2024</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Improved small-object detection and cut false positives by pairing a high-accuracy detector with a fast real-time one.</li>
+          <li>Measured precision and recall across overlap thresholds, and removed duplicate detections in post-processing.</li>
+          <li>Shipped it as a web app for real-time detection.</li>
+        </ul></div>
+      </details>
+      <details class="proj" data-skills="Python">
+        <summary>
+          <div class="top"><span class="kind">Computer vision</span><span class="chev" aria-hidden="true">▾</span></div>
+          <h3>Facial recognition &amp; emotion classification</h3>
+          <div class="headline">Reached <span class="num">68%+ accuracy</span>, beating the reference model's 62%.</div>
+          <span class="when">Aug – Dec 2023</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Assembled a varied facial-expression dataset and automated landmark labeling.</li>
+          <li>Made the model robust to partly covered faces by training on images with added occlusions.</li>
+          <li>Outperformed the reference model by <span class="num">6+ points</span> with a custom architecture.</li>
+        </ul></div>
+      </details>
+      <details class="proj" data-skills="Python">
+        <summary>
+          <div class="top"><span class="kind">NLP research</span><span class="chev" aria-hidden="true">▾</span></div>
+          <h3>Query understanding &amp; content indexing</h3>
+          <div class="headline">Improved macro-F1 by <span class="num">5.1%</span> over the baseline with less labeled data.</div>
+          <span class="when">Aug – Dec 2021</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Trained a semi-supervised language model that beat a standard baseline by <span class="num">5.1% macro-F1</span> while needing fewer labels.</li>
+          <li>Built the data pipeline that sourced and curated a cross-country corpus of election discourse.</li>
         </ul></div>
       </details>
     </div>
@@ -305,6 +386,7 @@ btn.addEventListener("click", e => {
 
 /* Open / close all roles */
 const roles = $$(".role");
+const items = $$(".role, .proj");
 $("#open-all").addEventListener("click", () => roles.forEach(r => r.open = true));
 $("#close-all").addEventListener("click", () => roles.forEach(r => r.open = false));
 
@@ -312,7 +394,7 @@ $("#close-all").addEventListener("click", () => roles.forEach(r => r.open = fals
 const status = $("#skill-status");
 $$("[data-list]").forEach(dd => {
   dd.dataset.list.split(",").forEach(name => {
-    const hits = roles.filter(r => r.dataset.skills.split(",").includes(name));
+    const hits = items.filter(r => r.dataset.skills.split(",").includes(name));
     let el;
     if (hits.length) {
       el = document.createElement("button"); el.type = "button"; el.setAttribute("aria-pressed", "false");
@@ -330,11 +412,11 @@ let picked = null;
 function pick(el, name, hits) {
   const off = picked === el;
   $$("button.chip").forEach(b => b.setAttribute("aria-pressed", "false"));
-  roles.forEach(r => r.classList.remove("lit", "dim"));
+  items.forEach(r => r.classList.remove("lit", "dim"));
   if (off) { picked = null; status.textContent = ""; return; }
   picked = el; el.setAttribute("aria-pressed", "true");
-  roles.forEach(r => { const on = hits.includes(r); r.classList.toggle("lit", on); r.classList.toggle("dim", !on); if (on) r.open = true; });
-  status.textContent = `${name}: used in ${hits.length} role${hits.length > 1 ? "s" : ""}. Highlighted above. Tap again to clear.`;
+  items.forEach(r => { const on = hits.includes(r); r.classList.toggle("lit", on); r.classList.toggle("dim", !on); if (on) r.open = true; });
+  status.textContent = `${name}: used in ${hits.length} place${hits.length > 1 ? "s" : ""}, highlighted above. Tap again to clear.`;
   hits[0].scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
 }
 
