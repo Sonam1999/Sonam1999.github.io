@@ -42,7 +42,7 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
 
 /* Hero */
 .hero{display:flex;flex-direction:column;gap:18px;position:relative}
-.hero-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.hero-top{display:flex;justify-content:flex-end;align-items:center;gap:12px}
 .hero h1{font-size:clamp(46px,9vw,84px);font-weight:800;letter-spacing:-.03em;display:flex;flex-wrap:wrap;gap:0 .25em}
 .hero h1 .word{display:inline-flex}
 .hero h1 .ch{display:inline-block;transition:transform .25s cubic-bezier(.3,1.6,.5,1), color .2s}
@@ -163,7 +163,6 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
 <div class="wrap">
   <header class="hero">
     <div class="hero-top">
-      <span class="label">Bellevue, WA · Open to San Francisco</span>
       <button class="btn theme" id="theme-toggle" type="button" aria-label="Switch light or dark theme"><span id="theme-icon">☾</span></button>
     </div>
     <h1 id="name" aria-label="Sonam Barnala">Sonam Barnala <span class="wave" aria-hidden="true">👋</span></h1>
@@ -198,7 +197,7 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
     </div>
     <div class="timeline">
       <details class="role" open data-skills="Spring Boot,Kafka,REST,OAuth2/JWT,MySQL,AWS,Docker">
-        <summary><div><h3>Software Engineer</h3><div class="org">Evolent Health · Virginia</div></div><span class="chev" aria-hidden="true">▾</span><span class="when">Jun 2025 – Now</span></summary>
+        <summary><div><h3>Software Engineer</h3><div class="org">Evolent Health</div></div><span class="chev" aria-hidden="true">▾</span><span class="when">Jun 2025 – Now</span></summary>
         <div class="body"><ul>
           <li>Cut duplicate patient bookings from <span class="num">5.2% to 0.3%</span> by owning the appointment scheduling service end to end, holding P99 latency under <span class="num">100ms</span> at 1K+ events/sec.</li>
           <li>Made patient record reads <span class="num">28% faster</span> (210ms → 151ms at P95) across 750K+ records, for APIs serving 250+ concurrent requests.</li>
@@ -213,7 +212,7 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
         </ul></div>
       </details>
       <details class="role" data-skills="React,WebSockets,REST,PHP,MySQL,AWS">
-        <summary><div><h3>Software Development Intern</h3><div class="org">Find A Mechanic · Buffalo</div></div><span class="chev" aria-hidden="true">▾</span><span class="when">Jan – May 2024</span></summary>
+        <summary><div><h3>Software Development Intern</h3><div class="org">Find A Mechanic</div></div><span class="chev" aria-hidden="true">▾</span><span class="when">Jan – May 2024</span></summary>
         <div class="body"><ul>
           <li>Reduced scheduling conflicts by <span class="num">40%</span> with a drag-and-drop calendar that checks availability in real time.</li>
           <li>Reduced appointment disagreements by <span class="num">35%</span> with real-time chat between customers, mechanics, and shop owners.</li>
@@ -221,7 +220,7 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
         </ul></div>
       </details>
       <details class="role" data-skills="React,Node.js,ASP.NET,MySQL,Docker,Kubernetes,Azure DevOps">
-        <summary><div><h3>Software Development Engineer</h3><div class="org">Capgemini · Bangalore</div></div><span class="chev" aria-hidden="true">▾</span><span class="when">2021 – Jul 2023</span></summary>
+        <summary><div><h3>Software Development Engineer</h3><div class="org">Capgemini</div></div><span class="chev" aria-hidden="true">▾</span><span class="when">2021 – Jul 2023</span></summary>
         <div class="body"><ul>
           <li>Made an expense management platform load <span class="num">20% faster</span> by reworking API responses and how pages load.</li>
           <li>Cut production deploy time by <span class="num">60%</span>, from 45 minutes to 18, by leading the move to containers and automated pipelines.</li>
@@ -229,7 +228,7 @@ button.chip[aria-pressed="true"] .n{color:var(--pop);background:var(--bg)}
         </ul></div>
       </details>
       <details class="role" data-skills="Spring Boot,REST,Angular">
-        <summary><div><h3>Software Development Intern</h3><div class="org">Mastercard · Pune</div></div><span class="chev" aria-hidden="true">▾</span><span class="when">May – Jul 2021</span></summary>
+        <summary><div><h3>Software Development Intern</h3><div class="org">Mastercard</div></div><span class="chev" aria-hidden="true">▾</span><span class="when">May – Jul 2021</span></summary>
         <div class="body"><ul>
           <li>Sped up downstream legal workflows by <span class="num">40%</span> with a document extraction service handling 500K+ documents a month at sub-300ms P95.</li>
           <li>Made contract data extraction <span class="num">60% more efficient</span>, and shipped an internal tool used by 500+ people at <span class="num">99.9% uptime</span>.</li>
