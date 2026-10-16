@@ -1,6 +1,6 @@
 # Sonam Barnala — Portfolio
 
-Personal site for Sonam Barnala, backend and distributed systems engineer (Java, Spring Boot, Kafka, Go, Raft, React).
+Personal site for Sonam Barnala, backend and distributed systems engineer who makes production systems faster and more reliable.
 
 Single static page, no build step: `index.html`.
 

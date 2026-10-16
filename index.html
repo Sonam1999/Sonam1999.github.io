@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sonam Barnala</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Sonam Barnala — backend and distributed systems engineer. Java, Spring Boot, Kafka, Go, Raft, React.">
+<meta name="description" content="Sonam Barnala — backend and distributed systems engineer who cuts latency, duplicates, and deploy time in production systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -112,8 +112,8 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
   <header class="hero">
     <span class="label">Backend · Distributed Systems · Bellevue, WA</span>
     <h1>Sonam Barnala</h1>
-    <div class="role">I build event-driven backends that stay correct under load.</div>
-    <p>Java and Spring Boot engineer working on Kafka microservices for healthcare scheduling at Evolent Health. Before that: full-stack work at Capgemini, a Raft key-value store in Go, and two years teaching distributed consensus at the University at Buffalo. IIT Kharagpur CS, MS from UB.</p>
+    <div class="role">I make production systems faster, more reliable, and easier to ship.</div>
+    <p>At Evolent Health I cut duplicate patient bookings from 5.2% to 0.3% and brought record reads down 28%. At Capgemini I took production deploys from 45 minutes to 18. At UB I built a consensus-based storage system that survived 500+ simulated node failures, and taught distributed systems to 70+ students. IIT Kharagpur CS, MS from UB.</p>
     <div class="links">
       <button class="btn primary" id="copy-email" type="button">Copy email</button>
       <a class="btn" id="link-linkedin" href="#" target="_blank" rel="noopener" hidden>LinkedIn</a>
@@ -124,10 +124,10 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
   </header>
 
   <div class="deltas" aria-label="Selected results">
-    <div class="delta"><span class="v"><s>5.2%</s> → <b>0.3%</b></span><span class="k">Duplicate bookings after idempotent Kafka consumers</span></div>
+    <div class="delta"><span class="v"><s>5.2%</s> → <b>0.3%</b></span><span class="k">Duplicate patient bookings</span></div>
     <div class="delta"><span class="v"><s>210ms</s> → <b>151ms</b></span><span class="k">P95 read latency across 750K+ patient records</span></div>
-    <div class="delta"><span class="v"><s>45ms</s> → <b>22ms</b></span><span class="k">P99 commit latency in a Raft KV store</span></div>
-    <div class="delta"><span class="v"><s>45min</s> → <b>18min</b></span><span class="k">Production deploy time with Kubernetes + CI/CD</span></div>
+    <div class="delta"><span class="v"><s>45ms</s> → <b>22ms</b></span><span class="k">P99 commit latency in a fault-tolerant store</span></div>
+    <div class="delta"><span class="v"><s>45min</s> → <b>18min</b></span><span class="k">Production deploy time</span></div>
   </div>
 
   <section id="experience">
@@ -136,14 +136,13 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
       <article class="entry">
         <div class="meta"><span class="idx">#05</span><span>Jun 2025 – Now</span><span>Virginia, US</span></div>
         <div>
-          <h3>Java Developer</h3>
+          <h3>Software Engineer</h3>
           <div class="org">Evolent Health</div>
           <ul>
-            <li>Owned a Kafka + Spring Boot appointment scheduling microservice with idempotent consumers, cutting duplicate bookings from 5.2% to 0.3% at 1K+ events/sec with P99 under 100ms.</li>
-            <li>Built RESTful EHR APIs serving 250+ concurrent requests; composite indexes and read replicas cut MySQL P95 reads from 210ms to 151ms over 750K+ patient records.</li>
-            <li>Secured services with OAuth2/JWT and RBAC for HIPAA compliance; ran Dockerized services on AWS EC2 behind an ALB with CPU-based auto-scaling.</li>
+            <li>Cut duplicate patient bookings from 5.2% to 0.3% by owning the appointment scheduling service end to end, while holding P99 latency under 100ms at 1K+ events/sec.</li>
+            <li>Made patient record reads 28% faster (210ms → 151ms at P95) across 750K+ records, for APIs serving 250+ concurrent requests.</li>
+            <li>Cut average response time by 60% and brought every service to HIPAA-compliant access control, with auto-scaling under peak load.</li>
           </ul>
-          <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">MySQL</span><span class="tag">AWS</span><span class="tag">Docker</span></div>
         </div>
       </article>
       <article class="entry">
@@ -152,10 +151,9 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
           <h3>Graduate Teaching Assistant, Distributed Systems</h3>
           <div class="org">University at Buffalo</div>
           <ul>
-            <li>Ran office hours on Raft and Paxos for 70+ students and debugged their fault-tolerant designs.</li>
-            <li>Taught Go concurrency (goroutines, channels, mutexes) and helped students remove data races and goroutine leaks.</li>
+            <li>Helped 70+ students get fault-tolerant consensus designs working through office hours and design debugging.</li>
+            <li>Taught concurrency and helped students find and remove data races and leaks.</li>
           </ul>
-          <div class="tags"><span class="tag">Go</span><span class="tag">Raft</span><span class="tag">Paxos</span></div>
         </div>
       </article>
       <article class="entry">
@@ -164,11 +162,10 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
           <h3>Software Development Intern</h3>
           <div class="org">Find A Mechanic</div>
           <ul>
-            <li>Built a drag-and-drop React scheduling calendar with real-time availability checks against the backend, reducing scheduling conflicts by 40%.</li>
-            <li>Built real-time chat between customers, mechanics, and shop owners with React and WebSockets, including threading and read receipts.</li>
-            <li>Designed PHP/MySQL REST APIs on AWS EC2/RDS handling 15,000+ daily requests under 200ms average.</li>
+            <li>Reduced scheduling conflicts by 40% with a drag-and-drop calendar that checks availability in real time.</li>
+            <li>Reduced appointment disagreements by 35% with real-time chat between customers, mechanics, and shop owners.</li>
+            <li>Designed the API layer behind the product: 15,000+ requests a day at under 200ms average.</li>
           </ul>
-          <div class="tags"><span class="tag">React</span><span class="tag">WebSockets</span><span class="tag">PHP</span><span class="tag">AWS RDS</span></div>
         </div>
       </article>
       <article class="entry">
@@ -177,11 +174,10 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
           <h3>Software Development Engineer</h3>
           <div class="org">Capgemini</div>
           <ul>
-            <li>Built full-stack features for an expense management platform (React, Node.js, C# ASP.NET, MySQL); lazy loading and code splitting cut page load time by 20%.</li>
-            <li>Led Docker and Kubernetes adoption with Azure DevOps pipelines, bringing production deploys from 45 to 18 minutes.</li>
-            <li>Reworked GitHub review workflows, cutting PR cycle time by 30% across a team of 10+ engineers.</li>
+            <li>Made an expense management platform load 20% faster by reworking API responses and how pages load.</li>
+            <li>Cut production deploy time by 60%, from 45 minutes to 18, by leading the move to containers and automated pipelines.</li>
+            <li>Cut code review cycle time by 30% across a team of 10+ engineers.</li>
           </ul>
-          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">C#</span><span class="tag">Kubernetes</span><span class="tag">Azure DevOps</span></div>
         </div>
       </article>
       <article class="entry">
@@ -190,10 +186,9 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
           <h3>Software Development Intern</h3>
           <div class="org">Mastercard</div>
           <ul>
-            <li>Built a Spring Boot API for PDF text extraction with parallel processing and caching: 500K+ documents a month at sub-300ms P95.</li>
-            <li>Implemented a CoreNLP named-entity pipeline for legal contracts and shipped an Angular tool to 500+ internal users at 99.9% uptime.</li>
+            <li>Sped up downstream legal workflows by 40% with a document extraction service handling 500K+ documents a month at sub-300ms P95.</li>
+            <li>Made contract data extraction 60% more efficient, and shipped an internal tool used by 500+ people at 99.9% uptime.</li>
           </ul>
-          <div class="tags"><span class="tag">Spring Boot</span><span class="tag">CoreNLP</span><span class="tag">Angular</span></div>
         </div>
       </article>
     </div>
@@ -208,18 +203,17 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:
       </div>
       <h3>Evaluation framework for distributed systems and databases</h3>
       <ul>
-        <li>Implemented a fault-tolerant key-value store in Go on Raft (leader election, log replication) and verified linearizability under failure.</li>
-        <li>Simulated 500+ node failures on CloudLab to find and fix split-brain scenarios.</li>
-        <li>Wrote a workload generator for 10K+ concurrent writes/sec and brought P99 commit latency from 45ms to 22ms.</li>
+        <li>Built a fault-tolerant key-value store that stayed consistent through leader failures and network splits.</li>
+        <li>Found and fixed split-brain bugs by simulating 500+ node failures.</li>
+        <li>Halved P99 commit latency (45ms → 22ms) under 10K+ concurrent writes/sec.</li>
       </ul>
-      <div class="tags"><span class="tag">Go</span><span class="tag">Raft</span><span class="tag">CloudLab</span><span class="tag">Linearizability</span></div>
     </div>
   </section>
 
   <section id="skills">
     <div class="sec-head"><h2>Skills</h2></div>
     <dl class="skills">
-      <dt>Languages</dt><dd>Java, Go, Python, C/C++, TypeScript, JavaScript, SQL, PHP</dd>
+      <dt>Languages</dt><dd>Go, Python, C/C++, TypeScript, JavaScript, SQL, PHP</dd>
       <dt>Backend</dt><dd>Spring Boot, Kafka, Node.js, ASP.NET, Django, REST, WebSockets, OAuth2/JWT</dd>
       <dt>Data</dt><dd>MySQL (indexing, read replicas), PostgreSQL</dd>
       <dt>Infra</dt><dd>AWS (EC2, RDS, ALB), Docker, Kubernetes, Azure DevOps, GitHub Actions CI</dd>
